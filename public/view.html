@@ -1,0 +1,90 @@
+<html ng-app>
+<!-- <script src="//code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+<script  src=" //code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"type="text/javascript"></script>
+ --><link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+    <script src="angsta.js"></script>
+
+  </head>
+<BODY ng-controller="mainController">
+<form class="container">
+<table class="table table-striped">
+	<tr>
+    <th>EMPID</th>
+    <th>FIRSTNAME</th>
+    <th>LASTNAME</th>
+    <th>GENDER</th>
+    <th>DATE OF BIRTH</th>
+    <th>UG</th>
+    <th>PG</th>
+    <th>DESIGNATION</th>
+    <th>Experience</th> 
+    <th>Salary</th>
+    <th>Address</th>
+  </tr>
+ <tr  ng-repeat="formda in formdas">
+    <td>{{ formda._id }}</td>
+    <td>{{ formda.firstname }}</td>
+    <td>{{ formda.lastname }}</td>
+    <td>{{ formda.Gender }}</td>
+    <td>{{ formda.dob }}</td>
+    <td>{{ formda.UG }}</td>
+    <td>{{ formda.PG  }}</td>
+    <td>{{ formda.designation}}</td>
+    <td>{{ formda.experience }}</td>
+    <td>{{ formda.salary }}</td>
+    <td>{{ formda.address }}</td>
+    <td><button class="btn btn-primary" ng-click="deleteTodo(formda._id)"  type="submit">DELETE</button>
+					</td>
+	<td>
+					<button   class="btn btn-primary" ng-click="edit(formda._id)" type="submit">Edit</button>
+					</td>
+
+					
+
+
+  </tr>	
+
+ </table>
+
+
+<div class="table-responsive">
+<table class="table">
+    <tr>
+    <th>EMPID</th>
+    <th>FIRSTNAME</th>
+    <th>LASTNAME</th>
+    <th>GENDER</th>
+    <th>DATE OF BIRTH</th>
+    <th>UG</th>
+    <th>PG</th>
+    <th>DESIGNATION</th>
+    <th>Experience</th> 
+    <th>Salary</th>
+    <th>Address</th>
+  </tr>
+ <tr ng-repeat="form in qq">
+                 
+<td><input type="text" ng-readonly="true"   ng-model="form._id" edit-inline /></td>
+ <td><input type="text"   ng-model="form.firstname " edit-inline/></td>
+ <td><input type="text"  ng-model="form.lastname" edit-inline/></td>
+ <td><input type="text"  ng-model="form.Gender"/></td>
+ <td><input type="text" ng-model="form.dob"/></td>
+ <td><input type="text"   ng-model="form.UG"/></td>
+ <td><input type="text"  ng-model="form.PG"/></td>
+ <td><input type="text"  ng-model="form.designation"/></td>
+ <td><input type="text"  ng-model="form.experience"/></td>
+  <td><input type="text"  ng-model="form.salary"/></td>
+ <td><input type="text"  ng-model="form.address"/></td>
+ <td><button class="btn btn-primary" ng-click="update(form);form={}" onClick="history.go(0)">UPDATE</button>
+                     
+   </tr>                     
+                   
+ </table>
+</div>
+</form> 
+</BODY>
+
+
+</html>

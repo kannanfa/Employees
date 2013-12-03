@@ -1,0 +1,113 @@
+    <div ng-controller="mainController" class="container">
+		<center>
+			  <form name="myForm"  >
+			  <table class="table table-hover" > 
+			  
+			  <tr>
+				<td class="field-label col-md-3 active">
+				<label><span class="label label-success" size="80">EMPLOYEE ID</span></label> 
+				</td>
+				<td class="col-md-9">
+				<input type="number" name="id" ng-model="user._id" placeholder="Type EMPLOYEE ID...."  required>
+					<span class="error" ng-show="myForm.id.$error.required">Required Number..</span>
+					<br>
+					 </td>
+				</tr>
+					
+												
+				 <tr>
+				<td class="field-label col-md-3 active">	
+				<label><span class="label label-info">FIRST NAME</span></label> 
+				</td>
+				<td class="col-md-9">
+				<input type="text" name="FIRSTNAME" ng-model="user.firstname" ng-minlength="3" placeholder="Type FIRST NAME ...." ng-maxlength="21" required>
+					<span class="error" ng-show="myForm.FIRSTNAME.$error.required">Required!</span>
+					<span class="error" ng-show="myForm.FIRSTNAME.$error.minlength"> Too short!</span>
+					<span class="error" ng-show="myForm.FIRSTNAME.$error.maxlength"> Too long!</span><br>
+				</td>
+				</tr>	
+				<tr>
+				<td class="field-label col-md-3 active">	
+				<label><span class="label label-info">LAST NAME</span></label> 
+				</td>
+				<td class="col-md-9">
+					<input type="text"  name="lastName"   ng-model="user.lastname" ng-minlength="3" placeholder="Type LAST NAME ...." ng-maxlength="21" required>
+					<span class="error" ng-show="myForm.lastName.$error.required">Required!</span>
+					<span class="error" ng-show="myForm.lastName.$error.minlength">Too short!</span>
+					<span class="error" ng-show="myForm.lastName.$error.maxlength">Too long!</span><br>
+					</td>
+					<tr>
+				<td class="field-label col-md-3 active">	
+				<label><span class="label label-info">Gender</span></label> 
+				</td>
+				<td class="col-md-9">
+				<input type="radio" ng-model="user.Gender" value="MALE">  MALE
+				<input type="radio" ng-model="user.Gender" value="FEMALE"> FEMALE <br>
+				</td>
+				<tr>
+				<td class="field-label col-md-3 active">					
+				<label><span class="label label-info">Date OF BIRTH</span></label> 
+				</td>
+				<td class="col-md-9">
+				<input type="DATE" name="dob" ng-model="user.dob" required>
+						<span class="error" ng-show="myForm.dob.$error.required">Required!</span><br>
+					</td>
+				<tr>
+				<td class="field-label col-md-3 active">				
+				<label><span class="label label-info">UG</span></label> 
+				</td>
+				<td class="col-md-9">
+						<input type="checkbox"  ng-model="user.UG" ng-true-value="UG" ng-true-value="" > 
+						</td>
+				<tr>
+				<td class="field-label col-md-3 active">
+				<label><span class="label label-info">PG</span></label> 
+				</td>
+				<td class="col-md-9">	
+						<input type="checkbox"  ng-model="user.PG" ng-true-value="PG" ng-true-value="" > <br>	
+						</td>
+				<tr>
+				<td class="field-label col-md-3 active">
+						
+				<label><span class="label label-info">Designation</span></label>		
+					</td>
+				<td class="col-md-9">
+					<input type="text"  name="Designation" placeholder="Type Designation ...." ng-model="user.designation"ng-minlength="3" ng-maxlength="10" required>
+					<span class="error" ng-show="myForm.Designation.$error.required">Required!</span>
+					<span class="error" ng-show="myForm.Designation.$error.minlength">Too short!</span>
+					<span class="error" ng-show="myForm.Designation.$error.maxlength">Too long!</span><br>
+					</td>
+				<tr>
+				<td class="field-label col-md-3 active">
+					
+				<label><span class="label label-info">Experience</span></label>		
+				</td>
+				<td class="col-md-9">
+					<input type="number" name="Experience" ng-model="user.experience" required>
+					</td>
+				<tr>
+				<td class="field-label col-md-3 active">
+				<label><span class="label label-info">Salary</span></label>	
+				</td>
+				<td class="col-md-9">
+				<input type='number' ng-model="user.salary"><br>
+				</td>
+				<tr>
+				<td class="field-label col-md-3 active">
+				
+				<label><span class="label label-info">Address</span></label>		
+				</td>
+				<td class="col-md-9">
+				<input type="text" name="Address"  ng-model="user.address" placeholder="Type  Address...."ng-minlength="3" ng-maxlength="10" required>
+					<span class="error" ng-show="myForm.Address.$error.required">Required!</span>
+					<span class="error" ng-show="myForm.Address.$error.minlength">Too short!</span>
+					<span class="error" ng-show="myForm.Address.$error.maxlength">Too long!</span><br>
+				</td>
+				</table>				
+				<button   class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" ng-click="createTodo()" type="submit">VALIDATE</button>
+							
+
+			  </form>
+		</center>
+		  
+    </div>
